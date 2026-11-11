@@ -312,55 +312,190 @@ body.opened #btnMusic{display:flex}
 </style>
 
 <style id="rimba-theme">
-:root{--gold:#d8b25a;--gold-l:#f0d68c;--gold-d:#8a6a24;--ink:#f2ecd8;--mut:#cfe0c2;--line:rgba(216,178,90,.45);--jung:#0b2417}
-body{background:#04120a}
-.phone{background:radial-gradient(120% 30% at 50% -2%,rgba(120,190,110,.20),transparent 55%),radial-gradient(80% 20% at 8% 30%,rgba(46,120,80,.20),transparent 60%),linear-gradient(180deg,#12351f 0%,#0d2b18 42%,#081f12 78%,#06180e 100%);color:var(--ink);box-shadow:0 0 90px rgba(0,0,0,.95)}
-.sec-title{color:#f7f1da;text-shadow:0 2px 14px rgba(0,0,0,.65)}
-.sec-sub{color:#d7e6c8}
-.sec-kicker{color:#0e2f1c;background:rgba(240,214,140,.92);animation:kickerFloat 5s ease-in-out infinite alternate}
-@keyframes kickerFloat{from{transform:translateY(0)}to{transform:translateY(-2px)}}
-.card,.person,.tl-card{background:linear-gradient(180deg,rgba(9,34,20,.88),rgba(6,26,15,.92));border-color:rgba(216,178,90,.5);color:#f2ecd8;box-shadow:0 14px 34px rgba(0,0,0,.45)}
+/* ================================================================
+   BESPOKE RIMBA JUNGLE — "EKSPEDISI MENYUSURI RIMBA" (2026-11-12)
+   Identitas struktural: papan penanda kayu ukir + tali di tiap section,
+   kanopi multi-bidang, jembatan tali SVG gambar tangan, jurnal lapangan,
+   countdown batu pahat, peta jalur ekspedisi. SEMUA gerak ambient =
+   animasi CSS transform/opacity (thread kompositor), NOL loop JS
+   per-frame, NOL canvas. Anchor: tegak=origin bawah (akar diam),
+   gantung=origin atas (titik gantung diam), melayang=bebas.
+   ================================================================ */
+:root{--gold:#d8b25a;--gold-l:#f0d68c;--gold-d:#a37f2e;--ink:#f2ecd8;--mut:#cfe0c2;--line:rgba(216,178,90,.45);
+  --wood:#7d5a33;--wood-d:#4c3016;--bark:#2e1c0c;--paper:#f3e9d2;--moss:#7fae5a}
+body{background:#030d06}
+.phone{background:
+  radial-gradient(120% 30% at 50% -2%,rgba(140,200,110,.16),transparent 55%),
+  radial-gradient(80% 20% at 6% 30%,rgba(46,120,80,.18),transparent 60%),
+  radial-gradient(80% 20% at 94% 62%,rgba(30,100,70,.14),transparent 60%),
+  linear-gradient(180deg,#143a22 0%,#0d2b18 42%,#081f12 78%,#05160c 100%);
+  color:var(--ink);box-shadow:0 0 90px rgba(0,0,0,.95)}
+section{background:radial-gradient(90% 300px at 50% 0%,rgba(190,230,160,.05),transparent 70%)}
+.sec-title{color:#f7f1da}
+.sec-sub{color:#dcebc9}
+.card,.person,.tl-card{background:linear-gradient(180deg,rgba(10,36,21,.9),rgba(6,26,15,.94));border-color:rgba(216,178,90,.5);color:#f2ecd8;box-shadow:0 14px 34px rgba(0,0,0,.5)}
 .card p,.person p,.tl-card p,.info-card p{color:#dcebd2!important}
 .person h3{color:#f7f1da}.person .gelar{color:#cfe0c2}
-.head-glass,.panel-glass{background:linear-gradient(180deg,rgba(9,34,20,.82),rgba(6,26,15,.86));border-color:rgba(216,178,90,.5)}
+.head-glass,.panel-glass{background:linear-gradient(180deg,rgba(10,36,21,.86),rgba(6,26,15,.9));border-color:rgba(216,178,90,.5)}
 .gal-cap{color:#e9f2dc;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-.gb-item{background:rgba(9,34,20,.9);border-color:rgba(216,178,90,.4);color:#f2ecd8}.gb-item p{color:#dcebd2}
+.gb-item{background:rgba(10,36,21,.92);border-color:rgba(216,178,90,.4);color:#f2ecd8}.gb-item p{color:#dcebd2}
 .field input,.field select,.field textarea{background:#fdfaf0;color:#1c2b1c}
 .field label{color:var(--gold-l)}
-.demo-note{color:#c4d6b4}
-#amplop .demo-note{background:rgba(9,34,20,.88);color:#dcebd2}
+.demo-note{color:#c9dcB6;text-shadow:0 1px 6px rgba(0,0,0,.85)}
+#amplop .demo-note{background:rgba(10,36,21,.88);color:#dcebd2}
 .acc-card .bank{color:var(--gold-l)}.acc-name{color:#cfe0c2}
-.copy-btn,.salin-btn{background:#fdfaf0}
-.dc-chip{background:rgba(253,250,240,.92);color:#1c2b1c;animation:chipFloat 6s ease-in-out infinite alternate}
+.copy-btn,.salin-btn{background:#fdfaf0;color:var(--gold-d)}
+.dc-chip{background:rgba(253,250,240,.94);color:#1c2b1c;animation:chipFloat 6s cubic-bezier(.37,0,.63,1) infinite alternate}
 .dc-chip:nth-child(2n){animation-delay:-3s}
-@keyframes chipFloat{from{transform:translateY(0)}to{transform:translateY(-2px)}}
+@keyframes chipFloat{from{transform:translateY(0)}to{transform:translateY(-2.5px)}}
 .tag-big{color:var(--gold-l);animation:tagShine 4s ease-in-out infinite alternate}
-@keyframes tagShine{from{opacity:.85}to{opacity:1}}
-.cd-box{background:linear-gradient(180deg,rgba(14,52,30,.85),rgba(7,28,16,.92))}
-.arch{border-color:var(--gold);background:linear-gradient(160deg,#1d4a2c,#0d2b18)}
+@keyframes tagShine{from{opacity:.82}to{opacity:1}}
 .foot-note{color:#a9c29a}
-.mist{position:absolute;left:-20%;width:140%;height:16%;border-radius:50%;background:radial-gradient(50% 50% at 50% 50%,rgba(255,255,255,.34),transparent 70%);filter:blur(6px);pointer-events:none;z-index:5;animation:mistDrift 16s ease-in-out infinite alternate}
-.mist.m1{top:34%}.mist.m2{top:58%;animation-duration:21s;animation-delay:-8s}
-@keyframes mistDrift{from{transform:translateX(-4%)}to{transform:translateX(4%)}}
-/* galeri rel geser */
-section .sec-head{background:linear-gradient(180deg,rgba(7,28,16,.82),rgba(5,22,12,.86));border:1px solid rgba(216,178,90,.42);border-radius:20px;padding:18px 12px 14px;box-shadow:0 12px 26px rgba(0,0,0,.4);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);text-shadow:none}
-.gal-cap{background:rgba(5,22,12,.72);border-radius:0 0 12px 12px;padding:5px 8px 7px;margin-top:4px}
 .btn-alt{color:#f0d68c!important;background:rgba(5,22,12,.35)}
 p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
-.demo-note{text-shadow:0 1px 6px rgba(0,0,0,.85)}
-.gal-rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scrollbar-width:none}
-.gal-rail::-webkit-scrollbar{display:none}
-.gal-rail figure{flex:0 0 68%;scroll-snap-align:center;cursor:zoom-in}
-.gal-rail .arch{height:300px;padding:5px;border-width:2px}
+#lightbox img{border:4px solid var(--wood);border-radius:14px;box-shadow:0 18px 44px rgba(0,0,0,.7)}
+/* frame foto = kayu & tali (menggantikan arch kastil) */
+.arch{border:3px solid #6d4a26;border-radius:16px;padding:6px;background:linear-gradient(160deg,#8a6538,#4c3016);box-shadow:0 16px 34px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,220,160,.4)}
+.arch img{border-radius:11px}
+/* ============ PAPAN PENANDA KAYU UKIR (judul section) ============ */
+.sec-head{margin-bottom:34px}
+.signpost{position:relative;padding-top:30px;--rot:-1.2deg}
+.sp-1{--rot:-1.3deg}.sp-2{--rot:1.15deg}.sp-3{--rot:-.55deg}.sp-4{--rot:1.6deg}
+.signpost::before{content:"";position:absolute;top:-6px;left:50%;width:15px;height:44px;transform:translateX(-50%);
+  background:linear-gradient(90deg,#3a2410,#7d5a33 45%,#8a6538 55%,#3a2410);border-radius:4px;box-shadow:0 4px 10px rgba(0,0,0,.5);z-index:0}
+.sign{position:relative;z-index:1;max-width:342px;margin:0 auto;padding:22px 20px 17px;text-align:center;transform-origin:50% -34px;
+  background:
+   repeating-linear-gradient(94deg,rgba(0,0,0,.14) 0 2px,transparent 2px 30px),
+   repeating-linear-gradient(0deg,rgba(255,235,190,.055) 0 3px,transparent 3px 10px),
+   linear-gradient(163deg,#86633a,#5d3f21 56%,#46300f);
+  border:2px solid #2e1c0c;border-radius:11px;
+  box-shadow:0 16px 30px rgba(0,0,0,.55),inset 0 2px 0 rgba(255,220,160,.35),inset 0 -4px 0 rgba(0,0,0,.32);
+  animation:signSway 9.5s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes signSway{from{rotate:calc(var(--rot) - .55deg)}to{rotate:calc(var(--rot) + .55deg)}}
+.sign .rope{position:absolute;top:-19px;width:64px;height:22px;border-top:3px solid #caa26a;border-radius:50%;opacity:.95}
+.sign .rope.rl{left:12px;transform:rotate(24deg)}
+.sign .rope.rr{right:12px;transform:rotate(-24deg)}
+.sign .nail{position:absolute;width:9px;height:9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe9b0,#a37f2e 60%,#5d430f);box-shadow:0 1px 3px rgba(0,0,0,.6)}
+.sign .nail.n1{top:7px;left:8px}.sign .nail.n2{top:7px;right:8px}.sign .nail.n3{bottom:7px;left:8px}.sign .nail.n4{bottom:7px;right:8px}
+.sign .sign-ico{width:40px;height:40px;object-fit:contain;margin:0 auto 4px;filter:drop-shadow(0 3px 5px rgba(0,0,0,.55));animation:icoBob 5.5s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes icoBob{from{transform:translateY(0) rotate(-2deg)}to{transform:translateY(-3px) rotate(2deg)}}
+.sign .sec-kicker{display:inline-block;background:rgba(30,18,6,.55);color:#ffd98a;box-shadow:inset 0 0 0 1px rgba(240,214,140,.4);text-shadow:0 1px 3px rgba(0,0,0,.8);animation:kickerGlow 4.5s ease-in-out infinite alternate}
+@keyframes kickerGlow{from{opacity:.85}to{opacity:1}}
+.sign .sec-title{color:#f8ecc0;margin-top:7px;text-shadow:0 2px 0 rgba(0,0,0,.5),0 3px 12px rgba(0,0,0,.45)}
+.sign .sec-sub{color:#eee3bd;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.sign .divider{filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+/* ============ ORNAMEN KHAS PER SECTION (set tidak diulang) ============ */
+.sec-orn{position:absolute;inset:0;pointer-events:none;z-index:2;overflow:visible}
+.orn{position:absolute;pointer-events:none;filter:drop-shadow(0 8px 14px rgba(0,0,0,.4))}
+.orn-tegak{transform-origin:50% 100%;animation:ornSwayT 8.5s cubic-bezier(.37,0,.63,1) infinite alternate}
+.orn-gantung{transform-origin:50% 0;animation:ornSwayG 9.5s cubic-bezier(.37,0,.63,1) infinite alternate}
+.orn-bob{animation:ornBob 6.5s cubic-bezier(.37,0,.63,1) infinite alternate}
+.orn-terbang{animation:ornFly 11s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes ornSwayT{from{transform:rotate(-1.5deg)}to{transform:rotate(1.5deg)}}
+@keyframes ornSwayG{from{transform:rotate(1.8deg)}to{transform:rotate(-1.8deg)}}
+@keyframes ornBob{from{transform:translateY(0) rotate(-1.6deg)}to{transform:translateY(-6px) rotate(1.6deg)}}
+@keyframes ornFly{0%{transform:translate(0,0) rotate(-3deg)}50%{transform:translate(-16px,-12px) rotate(3deg)}100%{transform:translate(6px,-4px) rotate(-2deg)}}
+/* ============ SAMPUL: KANOPI MULTI-BIDANG ============ */
+#cover{background:#0a2413}
+.plane{position:absolute;pointer-events:none}
+.pl-far{animation:plFar 17s cubic-bezier(.37,0,.63,1) infinite alternate}
+.pl-mid{animation:plMid 12.5s cubic-bezier(.37,0,.63,1) infinite alternate}
+.pl-near{animation:plNear 9s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes plFar{from{transform:translate3d(-4px,0,0)}to{transform:translate3d(5px,-3px,0)}}
+@keyframes plMid{from{transform:translate3d(6px,2px,0)}to{transform:translate3d(-7px,-4px,0)}}
+@keyframes plNear{from{transform:translate3d(-9px,3px,0)}to{transform:translate3d(10px,-5px,0)}}
+.sway-b{transform-origin:50% 100%;animation:swayB 8s cubic-bezier(.37,0,.63,1) infinite alternate}
+.sway-t{transform-origin:50% 0;animation:swayT 9s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes swayB{from{transform:rotate(-1.6deg)}to{transform:rotate(1.7deg)}}
+@keyframes swayT{from{transform:rotate(2deg)}to{transform:rotate(-2.1deg)}}
+.godray{position:absolute;top:-12%;height:78%;background:linear-gradient(180deg,rgba(255,244,190,.4),rgba(255,244,190,.06) 62%,transparent 82%);clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);transform-origin:50% 0;animation:rayPulse 7.5s cubic-bezier(.37,0,.63,1) infinite alternate;pointer-events:none}
+@keyframes rayPulse{from{opacity:.32;transform:rotate(12deg) scaleY(1)}to{opacity:.78;transform:rotate(15.5deg) scaleY(1.05)}}
+.shimmer{position:absolute;overflow:hidden;pointer-events:none;border-radius:40% 60% 55% 45%}
+.shimmer i{position:absolute;top:-10%;left:0;width:55%;height:120%;background:linear-gradient(100deg,transparent,rgba(255,255,236,.5) 50%,transparent);transform:translateX(-190%) skewX(-12deg);animation:shimmerGo 5.8s cubic-bezier(.37,0,.63,1) infinite}
+@keyframes shimmerGo{0%{transform:translateX(-190%) skewX(-12deg)}46%,100%{transform:translateX(320%) skewX(-12deg)}}
+.spark{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,252,225,1) 0%,rgba(255,246,190,.5) 42%,rgba(255,246,190,0) 72%);animation:sparkTw 2.9s ease-in-out infinite alternate;pointer-events:none}
+@keyframes sparkTw{from{opacity:.12;transform:scale(.65)}to{opacity:.95;transform:scale(1.3)}}
+.bridge{position:absolute;left:-5%;width:110%;top:45.5%;transform-origin:50% -12px;animation:bridgeSway 8.5s cubic-bezier(.37,0,.63,1) infinite alternate;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45));pointer-events:none}
+@keyframes bridgeSway{from{transform:rotate(.65deg)}to{transform:rotate(-.65deg)}}
+.mistband{position:absolute;left:-22%;width:144%;border-radius:50%;background:radial-gradient(50% 50% at 50% 50%,rgba(255,255,255,.34),transparent 70%);filter:blur(7px);pointer-events:none;animation:mistDrift 19s cubic-bezier(.37,0,.63,1) infinite alternate}
+.mistband.mb2{animation-duration:26s;animation-delay:-11s}
+@keyframes mistDrift{from{transform:translateX(-4.5%)}to{transform:translateX(4.5%)}}
+.flock{position:absolute;left:0;width:100%;pointer-events:none;opacity:0;z-index:6}
+.flock-1{top:15%;animation:flockGo 27s cubic-bezier(.37,0,.63,1) 3.4s infinite}
+.flock-2{top:27%;animation:flockGo2 43s cubic-bezier(.37,0,.63,1) 15s infinite}
+@keyframes flockGo{0%{transform:translateX(-18%) translateY(7%);opacity:0}4%{opacity:1}30%{transform:translateX(44%) translateY(-6%)}52%{opacity:1}58%,100%{transform:translateX(114%) translateY(-13%);opacity:0}}
+@keyframes flockGo2{0%{transform:translateX(112%) translateY(4%) scaleX(-1);opacity:0}4%{opacity:.95}30%{transform:translateX(48%) translateY(-5%) scaleX(-1)}52%{opacity:.95}58%,100%{transform:translateX(-18%) translateY(-10%) scaleX(-1);opacity:0}}
+.flock .fb{position:absolute;animation:birdBob 1.7s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes birdBob{from{transform:translateY(0) rotate(-2deg)}to{transform:translateY(-7px) rotate(2.5deg)}}
+.breath{animation:breathZoom 12s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes breathZoom{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+/* ============ COUNTDOWN BATU PAHAT ============ */
+.countdown{gap:11px}
+.cd-stone{position:relative;flex:1;max-width:80px;aspect-ratio:1/1.04;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cd-rock{position:absolute;inset:0;border-radius:49% 51% 55% 45%/53% 48% 52% 47%;
+  background:radial-gradient(120% 120% at 32% 26%,#8d9484 0%,#5f6a58 42%,#3d4a3c 78%,#2c382c 100%);
+  box-shadow:0 12px 24px rgba(0,0,0,.55),inset 0 2px 3px rgba(255,255,255,.35),inset 0 -6px 10px rgba(0,0,0,.45),inset 0 0 0 3px rgba(220,235,200,.14)}
+.cd-moss{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(127,174,90,.85),rgba(127,174,90,0) 70%);pointer-events:none}
+.cd-rope{position:absolute;inset:-6px;border:2.5px dashed rgba(202,162,106,.9);border-radius:50%;animation:ropeSpin 48s linear infinite;pointer-events:none}
+@keyframes ropeSpin{to{transform:rotate(360deg)}}
+.cd-stone b{position:relative;font-family:'Playfair Display',serif;font-size:26px;color:#fdf6da;text-shadow:0 2px 5px rgba(0,0,0,.65);line-height:1}
+.cd-stone b.pop{animation:cdpop .45s ease}
+.cd-stone span{position:relative;font-size:9px;letter-spacing:.2em;color:#e4efcd;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.7);margin-top:3px}
+/* ============ LOVE STORY: PETA JALUR EKSPEDISI ============ */
+.trail{position:relative;margin-top:4px;padding:8px 0 2px}
+.trail-path{position:absolute;left:0;top:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.pos{position:relative;z-index:1;width:84%;margin:0 0 30px}
+.pos:nth-child(even of .pos){margin-left:auto}
+.pos-card{background:linear-gradient(165deg,rgba(24,44,26,.94),rgba(12,30,17,.96));border:1.5px solid rgba(216,178,90,.5);border-radius:14px;padding:14px 15px 13px;box-shadow:0 14px 28px rgba(0,0,0,.5)}
+.pos-tag{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(160deg,#86633a,#54390f);border:1.5px solid #2e1c0c;color:#ffe9b0;font-size:10.5px;font-weight:800;letter-spacing:.18em;padding:5px 11px;border-radius:7px;box-shadow:0 5px 12px rgba(0,0,0,.45);animation:tagBob 6s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes tagBob{from{transform:rotate(-1.4deg)}to{transform:rotate(1.4deg)}}
+.pos-pin{position:absolute;top:-11px;width:19px;height:19px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe9b0,var(--gold) 55%,#7a5c14);border:2px solid rgba(30,18,6,.85);box-shadow:0 4px 9px rgba(0,0,0,.55);z-index:2;animation:pinPulse 3.4s ease-in-out infinite alternate}
+@keyframes pinPulse{from{transform:scale(1)}to{transform:scale(1.16)}}
+.pos:nth-child(odd of .pos) .pos-pin{right:16px}
+.pos:nth-child(even of .pos) .pos-pin{left:16px}
+.pos-year{font-family:'Playfair Display',serif;font-weight:900;font-size:17px;color:var(--gold-l);margin-top:9px}
+.pos-title{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:18.5px;color:#f7f1da;margin:1px 0 3px}
+.pos-card p{font-size:12.8px;line-height:1.65;color:#dcebd2}
+.pos-thumb{width:100%;height:104px;object-fit:cover;border-radius:10px;margin-bottom:4px;border:2px solid rgba(216,178,90,.4)}
+.pos-final .pos-card{border-color:#f0d68c;background:linear-gradient(165deg,rgba(58,44,16,.95),rgba(30,26,10,.97))}
+.pos-final .pos-tag{background:linear-gradient(160deg,#c9a45c,#8a6a24);color:#2e1c0c}
+/* ============ GALERI: JURNAL LAPANGAN ============ */
+.jrail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:14px 4px 18px;scrollbar-width:none}
+.jrail::-webkit-scrollbar{display:none}
+.jcard{flex:0 0 73%;scroll-snap-align:center;position:relative;color:#3a2c17;padding:16px 12px 13px;border-radius:5px 13px 7px 15px;
+  background:linear-gradient(180deg,#f6edd6,#ecdcba);
+  box-shadow:0 16px 28px rgba(0,0,0,.5);transform:rotate(var(--tilt,-1.3deg))}
+.jcard::before{content:"";position:absolute;top:0;left:0;right:0;height:9px;border-radius:5px 13px 0 0;
+  background:radial-gradient(circle at 8px -3px,transparent 7px,#f6edd6 7.5px)}
+.jpin{position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-4deg);width:34px;height:15px;border-radius:8px;z-index:3;
+  background:linear-gradient(180deg,#a97e46,#6d4a26);border:1.5px solid #3a2410;box-shadow:0 4px 8px rgba(0,0,0,.4)}
+.jpin::before{content:"";position:absolute;left:50%;top:-11px;width:20px;height:13px;transform:translateX(-50%);border:2.5px solid #caa26a;border-bottom:none;border-radius:12px 12px 0 0}
+.jphoto{border:6px solid #fffdf4;box-shadow:0 6px 14px rgba(60,40,10,.3);overflow:hidden;cursor:zoom-in;background:#fffdf4}
+.jphoto img{width:100%;height:262px;object-fit:cover}
+.jnote{font-family:'Great Vibes',cursive;font-size:23px;line-height:1.15;color:#5a4020;text-align:center;margin-top:11px;animation:noteFloat 7s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes noteFloat{from{transform:translateY(0)}to{transform:translateY(-2px)}}
+.jmeta{font-size:9.5px;font-weight:700;letter-spacing:.22em;color:#96742f;text-align:center;margin-top:2px;text-transform:uppercase}
+.pano{flex:0 0 93%;scroll-snap-align:center;position:relative;border-radius:14px;overflow:hidden;border:3px solid #3a2612;box-shadow:0 16px 30px rgba(0,0,0,.55);cursor:zoom-in;background:#0a2413}
+.pano img{width:100%;height:238px;object-fit:cover;animation:breathZoom 13s cubic-bezier(.37,0,.63,1) infinite alternate}
+.pano figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 11px;background:linear-gradient(0deg,rgba(4,16,8,.82),transparent);color:#f3e9d2;text-align:left}
+.pano .jnote{color:#ffeec2;text-align:left;margin-top:0}
+.pano .jmeta{color:#d8c690;text-align:left}
 .gal-dots{display:flex;gap:6px;justify-content:center;margin-top:2px}
 .gal-dots i{width:7px;height:7px;border-radius:99px;background:rgba(240,214,140,.4);transition:all .4s ease}
 .gal-dots i.on{width:20px;background:var(--gold-l)}
-/* reveal varian baru */
+.jhint{text-align:center;font-size:10.5px;letter-spacing:.26em;color:#ffd98a;font-weight:700;margin-top:8px;animation:hintPulse 3.6s ease-in-out infinite alternate}
+@keyframes hintPulse{from{opacity:.65;letter-spacing:.22em}to{opacity:1;letter-spacing:.3em}}
+/* penutup gantungan */
+.penutup-hang{position:absolute;top:2px;left:50%;width:72%;transform:translateX(-50%);transform-origin:50% 0;opacity:.6;z-index:1;animation:swayT 10s cubic-bezier(.37,0,.63,1) infinite alternate;pointer-events:none}
+/* reveal varian bespoke */
 .rv-flip{transform:perspective(700px) rotateX(38deg) translateY(26px)}
 .rv-drop{transform:translateY(-38px) scale(.96)}
 .rv-pop{transform:scale(.78)}
-.rv.in.rv-flip,.rv.in.rv-drop,.rv.in.rv-pop{transform:none}
-@media (prefers-reduced-motion: reduce){.mist,.sec-kicker,.dc-chip,.tag-big{animation:none!important}}
+.rv-swing{transform:rotate(4deg) translateY(24px);transform-origin:50% 0}
+.rv.in.rv-flip,.rv.in.rv-drop,.rv.in.rv-pop,.rv.in.rv-swing{transform:none}
+@media (prefers-reduced-motion: reduce){
+  .sign,.sign .sign-ico,.sign .sec-kicker,.orn,.plane,.sway-b,.sway-t,.godray,.shimmer i,.spark,.bridge,.mistband,.flock,.flock .fb,.breath,.cd-rope,.pos-tag,.pos-pin,.jnote,.jhint,.dc-chip,.tag-big,.penutup-hang{animation:none!important}
+}
 </style>
 </head>
 <body>
@@ -369,41 +504,48 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
   <!-- ================= SAMPUL: LIVING SCENE ================= -->
   <header id="cover" aria-label="Sampul undangan Rimba Jungle">
     <div class="scene" id="scene">
-      <img class="lyr lyr-coverbg" src="assets/undangya/rimba-jungle/cover-bg.webp" alt="Lukisan hutan rimba tropis utuh berkesinambungan: kanopi hijau pekat berlapis kabut, air terjun bertingkat, sungai jernih, dan burung eksotis beterbangan" width="860" height="1864">
-      <!-- bunga atas: 12 sprite individual menggantung berlapis (belakang dulu, depan terakhir);
-           tengah atas sengaja lega untuk crest + judul -->
-      <img class="lyr flwt back wind-fl" data-wind="topflw" data-anchor="top" data-amp="1.7" data-dur="9200" data-bend="3.2" style="left:-1%;top:-2%;width:13%;animation-delay:2.55s" src="assets/undangya/rimba-jungle/anggrek.webp" alt="">
-      <img class="lyr flwt back wind-fl" data-wind="topflw" data-anchor="top" data-amp="1.9" data-dur="8600" data-bend="3.4" style="left:10%;top:-3%;width:12.5%;animation-delay:2.65s" src="assets/undangya/rimba-jungle/lentera.webp" alt="">
-      <img class="lyr flwt back wind-fl" data-wind="topflw" data-anchor="top" data-amp="1.8" data-dur="9000" data-bend="3.3" style="right:10%;top:-3%;width:12.5%;animation-delay:2.6s" src="assets/undangya/rimba-jungle/lentera.webp" alt="">
-      <img class="lyr flwt back wind-fl" data-wind="topflw" data-anchor="top" data-amp="1.6" data-dur="9800" data-bend="3.1" style="right:-1%;top:-2%;width:13.5%;animation-delay:2.7s" src="assets/undangya/rimba-jungle/bougenville.webp" alt="">
-      <img class="lyr flwt back wind-fl" data-wind="topflw" data-anchor="top" data-amp="2" data-dur="8400" data-bend="3.5" style="left:24%;top:-4%;width:11%;animation-delay:2.8s" src="assets/undangya/rimba-jungle/bougenville.webp" alt="">
-      <img class="lyr flwt back wind-fl" data-wind="topflw" data-anchor="top" data-amp="2.1" data-dur="8800" data-bend="3.5" style="right:24%;top:-4%;width:11%;animation-delay:2.85s" src="assets/undangya/rimba-jungle/lentera.webp" alt="">
-      <img class="lyr flwt wind-fl" data-wind="topflw" data-anchor="top" data-amp="2.7" data-dur="8000" data-bend="3.9" style="left:-3%;top:-1%;width:19%;animation-delay:2.95s" src="assets/undangya/rimba-jungle/anggrek.webp" alt="">
-      <img class="lyr flwt wind-fl" data-wind="topflw" data-anchor="top" data-amp="2.5" data-dur="8600" data-bend="3.8" style="left:13.5%;top:-1.5%;width:17%;animation-delay:3.05s" src="assets/undangya/rimba-jungle/lentera.webp" alt="">
-      <img class="lyr flwt wind-fl" data-wind="topflw" data-anchor="top" data-amp="2.5" data-dur="8400" data-bend="3.8" style="right:13.5%;top:-1.5%;width:17%;animation-delay:3.1s" src="assets/undangya/rimba-jungle/bougenville.webp" alt="">
-      <img class="lyr flwt wind-fl" data-wind="topflw" data-anchor="top" data-amp="2.7" data-dur="8200" data-bend="3.9" style="right:-3%;top:-1%;width:19%;animation-delay:3s" src="assets/undangya/rimba-jungle/anggrek.webp" alt="">
-      <img class="lyr flwt wind-fl" data-wind="topflw" data-anchor="top" data-amp="2.9" data-dur="7600" data-bend="4" style="left:25.5%;top:-2.5%;width:12.5%;animation-delay:3.15s" src="assets/undangya/rimba-jungle/lentera.webp" alt="">
-      <img class="lyr flwt wind-fl" data-wind="topflw" data-anchor="top" data-amp="2.9" data-dur="7800" data-bend="4" style="right:25.5%;top:-2.5%;width:12.5%;animation-delay:3.2s" src="assets/undangya/rimba-jungle/lentera.webp" alt="">
-      <!-- bunga bawah: 12 sprite individual ditumpuk (belakang dulu, depan terakhir) -->
-      <img class="lyr flw back wind-fl" data-wind="flw" data-anchor="bottom" data-amp="1.7" data-dur="8600" data-bend="3.2" style="left:-.5%;bottom:8%;width:11.5%;animation-delay:2.6s" src="assets/undangya/rimba-jungle/jamur.webp" alt="">
-      <img class="lyr flw back wind-fl" data-wind="flw" data-anchor="bottom" data-amp="1.9" data-dur="9400" data-bend="3.4" style="left:-1%;bottom:5.5%;width:17.5%;animation-delay:2.7s" src="assets/undangya/rimba-jungle/anggrek.webp" alt="">
-      <img class="lyr flw back wind-fl" data-wind="flw" data-anchor="bottom" data-amp="2.1" data-dur="8000" data-bend="3.6" style="left:30.5%;bottom:7%;width:15.5%;animation-delay:2.8s" src="assets/undangya/rimba-jungle/bambu.webp" alt="">
-      <img class="lyr flw back wind-fl" data-wind="flw" data-anchor="bottom" data-amp="2.0" data-dur="8800" data-bend="3.5" style="right:29.5%;bottom:8%;width:13.5%;animation-delay:2.75s" src="assets/undangya/rimba-jungle/pisang.webp" alt="">
-      <img class="lyr flw back wind-fl" data-wind="flw" data-anchor="bottom" data-amp="1.8" data-dur="9200" data-bend="3.3" style="right:8.5%;bottom:8.4%;width:17%;animation-delay:2.65s" src="assets/undangya/rimba-jungle/flamboyan.webp" alt="">
-      <img class="lyr flw back wind-fl" data-wind="flw" data-anchor="bottom" data-amp="1.6" data-dur="9800" data-bend="3.1" style="right:-1%;bottom:8%;width:16%;animation-delay:2.85s" src="assets/undangya/rimba-jungle/pakis.webp" alt="">
-      <img class="lyr flw wind-fl" data-wind="flw" data-anchor="bottom" data-amp="2.6" data-dur="8400" data-bend="3.9" style="left:-5.5%;bottom:-1.5%;width:31%;animation-delay:2.95s" src="assets/undangya/rimba-jungle/pakis.webp" alt="">
-      <img class="lyr flw wind-fl" data-wind="flw" data-anchor="bottom" data-amp="2.8" data-dur="7800" data-bend="4.0" style="left:18.5%;bottom:-2%;width:23.5%;animation-delay:3.05s" src="assets/undangya/rimba-jungle/daun-monstera.webp" alt="">
-      <img class="lyr flw wind-fl" data-wind="flw" data-anchor="bottom" data-amp="3.0" data-dur="7200" data-bend="4.0" style="left:37.5%;bottom:-1%;width:11.5%;animation-delay:3.15s" src="assets/undangya/rimba-jungle/teratai.webp" alt="">
-      <img class="lyr flw wind-fl" data-wind="flw" data-anchor="bottom" data-amp="2.9" data-dur="7600" data-bend="4.0" style="right:37.5%;bottom:-1%;width:12%;animation-delay:3.2s" src="assets/undangya/rimba-jungle/palem.webp" alt="">
-      <img class="lyr flw wind-fl" data-wind="flw" data-anchor="bottom" data-amp="2.7" data-dur="8200" data-bend="3.9" style="right:18.5%;bottom:-2%;width:24%;animation-delay:3.1s" src="assets/undangya/rimba-jungle/bunga-hutan.webp" alt="">
-      <img class="lyr flw wind-fl" data-wind="flw" data-anchor="bottom" data-amp="2.4" data-dur="9000" data-bend="3.8" style="right:-4.5%;bottom:-1.2%;width:26%;animation-delay:3s" src="assets/undangya/rimba-jungle/bougenville.webp" alt="">
-      <img class="lyr lyr-crest" src="assets/undangya/rimba-jungle/crest.webp" alt="Lambang daun rimba berbingkai emas">
-      <div class="flyx fx-a" style="top:34%;z-index:6"><div class="flyy fy-a"><img class="flyimg fi-a" src="assets/undangya/rimba-jungle/bird.webp" alt="" decoding="async"></div></div>
-      <div class="flyx fx-b" style="top:52%;z-index:6"><div class="flyy fy-b"><img class="flyimg fi-b" src="assets/undangya/rimba-jungle/bird.webp" alt="" decoding="async"></div></div>
-      <div class="flyx fx-c" style="top:15%;z-index:3"><div class="flyy fy-c"><img class="flyimg fi-c" src="assets/undangya/rimba-jungle/bird.webp" alt="" decoding="async"></div></div>
+      <img class="lyr lyr-coverbg dec" src="assets/undangya/rimba-jungle/cover-bg.webp" alt="Lukisan hutan rimba tropis utuh: kanopi hijau pekat berlapis kabut, air terjun bertingkat, sungai jernih, dan burung eksotis beterbangan" width="860" height="1864">
+      <div class="godray dec" style="left:16%;width:30%"></div>
+      <div class="godray dec" style="left:56%;width:22%;animation-delay:-3.6s"></div>
+      <div class="shimmer dec" style="left:33%;top:7%;width:36%;height:40%"><i></i></div>
+      <svg class="bridge dec" viewBox="0 0 430 96" aria-hidden="true"><rect x="2" y="18" width="11" height="66" rx="3" fill="#4c3016" stroke="#2e1c0c" stroke-width="1.5"/><rect x="417" y="18" width="11" height="66" rx="3" fill="#4c3016" stroke="#2e1c0c" stroke-width="1.5"/><path d="M6 30 Q215 62 424 30" fill="none" stroke="#caa26a" stroke-width="3.4"/><path d="M6 62 Q215 96 424 62" fill="none" stroke="#a97e46" stroke-width="3"/><line x1="64" y1="19.4" x2="64" y2="49.2" stroke="#a97e46" stroke-width="2"/><line x1="97" y1="22.5" x2="97" y2="54.0" stroke="#a97e46" stroke-width="2"/><line x1="130" y1="25.2" x2="130" y2="58.1" stroke="#a97e46" stroke-width="2"/><line x1="163" y1="27.3" x2="163" y2="61.3" stroke="#a97e46" stroke-width="2"/><line x1="196" y1="28.6" x2="196" y2="63.3" stroke="#a97e46" stroke-width="2"/><line x1="229" y1="29.0" x2="229" y2="64.0" stroke="#a97e46" stroke-width="2"/><line x1="262" y1="28.6" x2="262" y2="63.3" stroke="#a97e46" stroke-width="2"/><line x1="295" y1="27.3" x2="295" y2="61.3" stroke="#a97e46" stroke-width="2"/><line x1="328" y1="25.2" x2="328" y2="58.1" stroke="#a97e46" stroke-width="2"/><line x1="361" y1="22.5" x2="361" y2="54.0" stroke="#a97e46" stroke-width="2"/><line x1="394" y1="19.4" x2="394" y2="49.2" stroke="#a97e46" stroke-width="2"/><rect x="18" y="44.0" width="27" height="7.5" rx="2" transform="rotate(14.0 31 47.0)" fill="#7d5a33" stroke="#3a2410" stroke-width="1.2"/><rect x="51" y="49.2" width="27" height="7.5" rx="2" transform="rotate(13.5 64 52.2)" fill="#7d5a33" stroke="#3a2410" stroke-width="1.2"/><rect x="84" y="54.0" width="27" height="7.5" rx="2" transform="rotate(12.1 97 57.0)" fill="#7d5a33" stroke="#3a2410" stroke-width="1.2"/><rect x="117" y="58.1" width="27" height="7.5" rx="2" transform="rotate(9.9 130 61.1)" fill="#7d5a33" stroke="#3a2410" stroke-width="1.2"/><rect x="150" y="61.3" width="27" height="7.5" rx="2" transform="rotate(7.0 163 64.3)" fill="#7d5a33" stroke="#3a2410" stroke-width="1.2"/><rect x="183" y="63.3" width="27" height="7.5" rx="2" transform="rotate(3.6 196 66.3)" fill="#7d5a33" stroke="#3a2410" stroke-width="1.2"/><rect x="216" y="64.0" width="27" height="7.5" rx="2" transform="rotate(0.0 229 67.0)" fill="#7d5a33" stroke="#3a2410" stroke-width="1.2"/><rect x="249" y="63.3" width="27" height="7.5" rx="2" transform="rotate(-3.6 262 66.3)" fill="#7d5a33" stroke="#3a2410" stroke-width="1.2"/><rect x="282" y="61.3" width="27" height="7.5" rx="2" transform="rotate(-7.0 295 64.3)" fill="#7d5a33" stroke="#3a2410" stroke-width="1.2"/><rect x="315" y="58.1" width="27" height="7.5" rx="2" transform="rotate(-9.9 328 61.1)" fill="#7d5a33" stroke="#3a2410" stroke-width="1.2"/><rect x="348" y="54.0" width="27" height="7.5" rx="2" transform="rotate(-12.1 361 57.0)" fill="#7d5a33" stroke="#3a2410" stroke-width="1.2"/><rect x="381" y="49.2" width="27" height="7.5" rx="2" transform="rotate(-13.5 394 52.2)" fill="#7d5a33" stroke="#3a2410" stroke-width="1.2"/><rect x="414" y="44.0" width="27" height="7.5" rx="2" transform="rotate(-14.0 427 47.0)" fill="#7d5a33" stroke="#3a2410" stroke-width="1.2"/></svg>
+      <div class="mistband dec" style="top:52%;height:13%"></div>
+      <img class="plane pl-far dec sway-b" style="left:-4%;top:31%;width:24%" src="assets/undangya/rimba-jungle/bambu.webp" alt="">
+      <img class="plane pl-far dec sway-b" style="right:-4%;top:33%;width:22%;animation-delay:-5s" src="assets/undangya/rimba-jungle/pisang.webp" alt="">
+      <div class="flock flock-1 dec" aria-hidden="true">
+        <img class="fb" style="left:2%;top:0;width:15%" src="assets/undangya/rimba-jungle/bird.webp" alt="">
+        <img class="fb" style="left:15%;top:22px;width:11%;animation-delay:-.6s" src="assets/undangya/rimba-jungle/bird.webp" alt="">
+        <img class="fb" style="left:7%;top:46px;width:9%;animation-delay:-1.1s" src="assets/undangya/rimba-jungle/kakatua.webp" alt="">
+      </div>
+      <div class="flock flock-2 dec" aria-hidden="true">
+        <img class="fb" style="left:60%;top:0;width:10%" src="assets/undangya/rimba-jungle/kakatua.webp" alt="">
+        <img class="fb" style="left:72%;top:20px;width:8%;animation-delay:-.8s" src="assets/undangya/rimba-jungle/bird.webp" alt="">
+      </div>
+      <img class="plane pl-mid dec sway-t" style="left:-3%;top:-2%;width:21%" src="assets/undangya/rimba-jungle/anggrek-juntai.webp" alt="">
+      <img class="plane pl-mid dec sway-t" style="left:17%;top:-3%;width:13%;animation-delay:-3s" src="assets/undangya/rimba-jungle/lentera.webp" alt="">
+      <img class="plane pl-mid dec sway-t" style="right:17%;top:-3%;width:13%;animation-delay:-5.5s" src="assets/undangya/rimba-jungle/lentera.webp" alt="">
+      <img class="plane pl-mid dec sway-t" style="right:-3%;top:-2%;width:22%;animation-delay:-2s" src="assets/undangya/rimba-jungle/anggrek-juntai.webp" alt="">
+      <img class="plane pl-mid dec sway-b" style="left:-7%;top:56%;width:27%" src="assets/undangya/rimba-jungle/daun-monstera.webp" alt="">
+      <img class="plane pl-mid dec sway-b" style="right:-7%;top:58%;width:26%;animation-delay:-4s" src="assets/undangya/rimba-jungle/palem.webp" alt="">
+      <img class="lyr lyr-crest dec" src="assets/undangya/rimba-jungle/crest.webp" alt="Lambang daun rimba berbingkai emas">
+      <div class="mistband mb2 dec" style="top:71%;height:15%"></div>
+      <img class="plane pl-near dec sway-b" style="left:-13%;bottom:-3%;width:56%" src="assets/undangya/rimba-jungle/daun-raksasa.webp" alt="">
+      <img class="plane pl-near dec sway-b" style="right:-12%;bottom:-3%;width:50%;animation-delay:-4.5s" src="assets/undangya/rimba-jungle/pakis.webp" alt="">
+      <img class="plane pl-near dec sway-b" style="left:1%;bottom:9%;width:12%;animation-delay:-2s" src="assets/undangya/rimba-jungle/jamur.webp" alt="">
+      <img class="plane pl-near dec sway-b" style="left:12%;bottom:-1%;width:15%;animation-delay:-6s" src="assets/undangya/rimba-jungle/anggrek.webp" alt="">
+      <img class="plane pl-near dec sway-b" style="left:31%;bottom:-1.5%;width:11%;animation-delay:-3s" src="assets/undangya/rimba-jungle/teratai.webp" alt="">
+      <img class="plane pl-near dec sway-b" style="right:31%;bottom:-1%;width:12%;animation-delay:-5s" src="assets/undangya/rimba-jungle/heliconia.webp" alt="">
+      <img class="plane pl-near dec sway-b" style="right:12%;bottom:-1.5%;width:16%;animation-delay:-1.5s" src="assets/undangya/rimba-jungle/bunga-hutan.webp" alt="">
+      <img class="plane pl-near dec sway-b" style="right:1%;bottom:9.5%;width:13%;animation-delay:-7s" src="assets/undangya/rimba-jungle/flamboyan.webp" alt="">
+      <span class="spark dec" style="left:38%;top:22%;width:6px;height:6px"></span>
+      <span class="spark dec" style="left:52%;top:30%;width:4px;height:4px;animation-delay:-1.2s"></span>
+      <span class="spark dec" style="left:63%;top:18%;width:5px;height:5px;animation-delay:-2s"></span>
+      <span class="spark dec" style="left:44%;top:38%;width:4px;height:4px;animation-delay:-.7s"></span>
+      <span class="spark dec" style="left:58%;top:44%;width:6px;height:6px;animation-delay:-1.6s"></span>
+      <span class="spark dec" style="left:35%;top:47%;width:4px;height:4px;animation-delay:-2.4s"></span>
       <div class="ffly-field" id="fflyCover" aria-hidden="true"></div>
       <div class="petal-field" id="petalCover" aria-hidden="true"></div>
-      <div class="mist m1"></div><div class="mist m2"></div><div class="cover-shade"></div>
+      <div class="cover-shade"></div>
     </div>
     <div class="cover-ui">
       <div class="cover-kicker">THE WEDDING OF</div>
@@ -417,16 +559,13 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
   </header>
 
   <main id="content">
-    <div class="world-bg" aria-hidden="true"><div class="world-stack" id="worldStack"><img src="assets/undangya/rimba-jungle/bg-world-1.webp" alt="" width="720" height="1330" decoding="async"><img src="assets/undangya/rimba-jungle/bg-world-2.webp" alt="" width="720" height="900" loading="lazy" decoding="async"><img src="assets/undangya/rimba-jungle/bg-world-3.webp" alt="" width="720" height="720" loading="lazy" decoding="async"><img src="assets/undangya/rimba-jungle/bg-world-4.webp" alt="" width="720" height="750" loading="lazy" decoding="async"><img src="assets/undangya/rimba-jungle/bg-world-5.webp" alt="" width="720" height="243" loading="lazy" decoding="async"></div></div>
     <!-- ================= PEMBUKA ================= -->
     <section id="sambutan">
+      <div class="sec-orn" aria-hidden="true"><img class="orn orn-tegak" style="left:-8px;top:110px;width:52px" src="assets/undangya/rimba-jungle/heliconia.webp" alt="" loading="lazy"><img class="orn orn-tegak" style="right:-6px;bottom:26px;width:48px;animation-delay:-4s" src="assets/undangya/rimba-jungle/kembang-sepatu.webp" alt="" loading="lazy"></div>
       <div class="bg-tint">
-        <div class="sec-head rv rv-up">
-          <img class="sec-icon" src="assets/undangya/rimba-jungle/crest.webp" alt="">
-          <div class="sec-kicker">DENGAN MEMOHON RAHMAT ALLAH SWT</div>
-          <h2 class="sec-title serif">Sebuah Petualangan Dimulai</h2>
+        <div class="sec-head rv rv-swing"><div class="signpost sp-1"><div class="sign"><i class="rope rl"></i><i class="rope rr"></i><i class="nail n1"></i><i class="nail n2"></i><i class="nail n3"></i><i class="nail n4"></i><img class="sign-ico" src="assets/undangya/rimba-jungle/crest.webp" alt="" loading="lazy" decoding="async"><div><span class="sec-kicker">DENGAN MEMOHON RAHMAT ALLAH SWT</span></div><h2 class="sec-title serif">Sebuah Petualangan Dimulai</h2>
           <svg class="divider" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 6 H44 M76 6 H118" stroke="#c9a45c" stroke-width="1.4"/><path d="M60 1 L65 6 L60 11 L55 6 Z" fill="none" stroke="#c9a45c" stroke-width="1.4"/><circle cx="49" cy="6" r="1.8" fill="#c96f8e"/><circle cx="71" cy="6" r="1.8" fill="#c96f8e"/></svg>
-        </div>
+        </div></div></div>
         <div class="card rv rv-zoom" style="text-align:center">
           <p class="corm" style="font-size:19px;line-height:1.75;font-style:italic">“Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”</p>
           <p style="margin-top:12px;font-size:12px;letter-spacing:.24em;color:var(--rose);font-weight:700">QS. AR-RUM : 21</p>
@@ -437,14 +576,12 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
 
     <!-- ================= MEMPELAI ================= -->
     <section id="mempelai">
+      <div class="sec-orn" aria-hidden="true"><img class="orn orn-gantung" style="left:2px;top:64px;width:34px" src="assets/undangya/rimba-jungle/anggrek-juntai.webp" alt="" loading="lazy"><img class="orn orn-tegak" style="right:-4px;top:40%;width:44px;animation-delay:-3s" src="assets/undangya/rimba-jungle/ixora.webp" alt="" loading="lazy"></div>
       <div class="sec-petals" aria-hidden="true"></div>
       <div class="bg-tint">
-      <div class="sec-head rv rv-up">
-        <img class="sec-icon" src="assets/undangya/rimba-jungle/icon-leaf.webp" alt="" loading="lazy" decoding="async">
-        <div class="sec-kicker">MEMPELAI</div>
-        <h2 class="sec-title serif">Dua Penjelajah Hati</h2>
+      <div class="sec-head rv rv-swing"><div class="signpost sp-2"><div class="sign"><i class="rope rl"></i><i class="rope rr"></i><i class="nail n1"></i><i class="nail n2"></i><i class="nail n3"></i><i class="nail n4"></i><img class="sign-ico" src="assets/undangya/rimba-jungle/icon-leaf.webp" alt="" loading="lazy" decoding="async"><div><span class="sec-kicker">MEMPELAI</span></div><h2 class="sec-title serif">Dua Penjelajah Hati</h2>
         <p class="sec-sub">Dua mempelai yang berbahagia di jantung rimba</p>
-      </div>
+      </div></div></div>
       <div class="couple-grid">
         <div class="person rv rv-left">
           <div class="arch"><img src="assets/undangya/rimba-jungle/bride.webp" alt="Mempelai wanita, Meyzsa Putri Ananda, bergaun krem di hutan tropis berkabut" loading="lazy" decoding="async"></div>
@@ -470,47 +607,50 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
 
 <!-- ================= LOVE STORY ================= -->
     <section id="kisah">
+      <div class="sec-orn" aria-hidden="true"><img class="orn orn-bob" style="left:0;top:96px;width:56px" src="assets/undangya/rimba-jungle/kompas.webp" alt="" loading="lazy"><img class="orn orn-gantung" style="right:6px;top:0;width:120px;opacity:.85" src="assets/undangya/rimba-jungle/sulur.webp" alt="" loading="lazy"></div>
       <div class="bg-tint">
-        <div class="sec-head rv rv-up">
-          <img class="sec-icon" src="assets/undangya/rimba-jungle/icon-rings.webp" alt="" loading="lazy" decoding="async">
-          <div class="sec-kicker">LOVE STORY</div>
-          <h2 class="sec-title serif">Kisah Dua Penjelajah</h2>
+        <div class="sec-head rv rv-swing"><div class="signpost sp-3"><div class="sign"><i class="rope rl"></i><i class="rope rr"></i><i class="nail n1"></i><i class="nail n2"></i><i class="nail n3"></i><i class="nail n4"></i><img class="sign-ico" src="assets/undangya/rimba-jungle/icon-rings.webp" alt="" loading="lazy" decoding="async"><div><span class="sec-kicker">LOVE STORY</span></div><h2 class="sec-title serif">Kisah Dua Penjelajah</h2>
           <p class="sec-sub">Jejak-jejak perjalanan yang membawa kami sampai ke hari ini</p>
-        </div>
-        <div class="tl">
-          <div class="tl-item rv rv-left">
-            <span class="tl-dot" aria-hidden="true"></span>
-            <div class="tl-card">
-              <img class="tl-thumb" src="assets/undangya/rimba-jungle/galeri-5.webp" alt="Pasangan di jalur rimba saat awal kisah" loading="lazy" decoding="async">
-              <div class="tl-year">2019</div>
-              <div class="tl-title">Pertama Bertemu</div>
+        </div></div></div>
+        <div class="trail">
+          <svg class="trail-path" viewBox="0 0 100 460" preserveAspectRatio="none" aria-hidden="true"><path d="M50 2 C96 58,4 108,50 166 C96 224,4 280,50 338 C88 378,12 418,50 458" fill="none" stroke="#d8b25a" stroke-width="2.5" stroke-dasharray="2.5 2.2" pathLength="100" vector-effect="non-scaling-stroke" opacity=".85" stroke-linecap="round"/></svg>
+          <div class="pos rv rv-left">
+            <span class="pos-pin" aria-hidden="true"></span>
+            <div class="pos-card">
+              <span class="pos-tag">📍 POS 1 · AWAL JALUR</span>
+              <img class="pos-thumb" src="assets/undangya/rimba-jungle/galeri-5.webp" alt="Pasangan di jalur rimba saat awal kisah" loading="lazy" decoding="async">
+              <div class="pos-year">2019</div>
+              <div class="pos-title">Pertama Bertemu</div>
               <p>Berawal dari pertemuan sederhana di perpustakaan kampus — seperti langkah pertama memasuki rimba, obrolan hari itu menjadi jejak pertama kisah kami.</p>
             </div>
           </div>
-          <div class="tl-item rv rv-right">
-            <span class="tl-dot" aria-hidden="true"></span>
-            <div class="tl-card">
-              <img class="tl-thumb" src="assets/undangya/rimba-jungle/galeri-2.webp" alt="Pasangan pada momen lamaran" loading="lazy" decoding="async">
-              <div class="tl-year">2023</div>
-              <div class="tl-title">Lamaran &amp; Restu</div>
+          <div class="pos rv rv-right">
+            <span class="pos-pin" aria-hidden="true"></span>
+            <div class="pos-card">
+              <span class="pos-tag">📍 POS 2 · JEMBATAN TALI</span>
+              <img class="pos-thumb" src="assets/undangya/rimba-jungle/galeri-2.webp" alt="Pasangan pada momen lamaran" loading="lazy" decoding="async">
+              <div class="pos-year">2023</div>
+              <div class="pos-title">Lamaran &amp; Restu</div>
               <p>Di hadapan keluarga tercinta, Fahrezzi menyampaikan niat sucinya. Dengan restu kedua orang tua, Meyzsa menerimanya dengan hati secerah pagi di rimba.</p>
             </div>
           </div>
-          <div class="tl-item rv rv-left">
-            <span class="tl-dot" aria-hidden="true"></span>
-            <div class="tl-card">
-              <img class="tl-thumb" src="assets/undangya/rimba-jungle/galeri-4.webp" alt="Dua keluarga saling mengenal" loading="lazy" decoding="async">
-              <div class="tl-year">2025</div>
-              <div class="tl-title">Menyatukan Dua Keluarga</div>
+          <div class="pos rv rv-left">
+            <span class="pos-pin" aria-hidden="true"></span>
+            <div class="pos-card">
+              <span class="pos-tag">📍 POS 3 · RUMAH POHON</span>
+              <img class="pos-thumb" src="assets/undangya/rimba-jungle/galeri-4.webp" alt="Dua keluarga saling mengenal" loading="lazy" decoding="async">
+              <div class="pos-year">2025</div>
+              <div class="pos-title">Menyatukan Dua Keluarga</div>
               <p>Persiapan demi persiapan kami jalani bersama — seperti menyusuri sungai menuju muaranya, dua keluarga saling mengenal dan menyatukan doa, hingga hari bahagia terasa kian dekat.</p>
             </div>
           </div>
-          <div class="tl-item rv rv-right">
-            <span class="tl-dot" aria-hidden="true"></span>
-            <div class="tl-card">
-              <img class="tl-thumb" src="assets/undangya/rimba-jungle/hero.webp" alt="Pasangan di depan air terjun pada hari bahagia" loading="lazy" decoding="async">
-              <div class="tl-year">2027</div>
-              <div class="tl-title">Hari Bahagia</div>
+          <div class="pos pos-final rv rv-pop">
+            <span class="pos-pin" aria-hidden="true"></span>
+            <div class="pos-card">
+              <span class="pos-tag">🏁 POS AKHIR · HARI BAHAGIA</span>
+              <img class="pos-thumb" src="assets/undangya/rimba-jungle/hero.webp" alt="Pasangan di depan air terjun pada hari bahagia" loading="lazy" decoding="async">
+              <div class="pos-year">2027</div>
+              <div class="pos-title">Hari Bahagia</div>
               <p>Sabtu, 12 Juni 2027 — petualangan terindah kami dimulai. Kami mohon doa restu agar langkah ini diberkahi hingga selamanya.</p>
             </div>
           </div>
@@ -521,17 +661,15 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
 
         <!-- ================= COUNTDOWN + ACARA ================= -->
     <section id="acara">
+      <div class="sec-orn" aria-hidden="true"><img class="orn orn-tegak" style="left:-6px;bottom:30px;width:56px" src="assets/undangya/rimba-jungle/jamur.webp" alt="" loading="lazy"><img class="orn orn-gantung" style="right:2px;top:80px;width:40px;animation-delay:-4s" src="assets/undangya/rimba-jungle/lentera-daun.webp" alt="" loading="lazy"></div>
       <div class="bg-tint">
-        <div class="sec-head rv rv-up">
-          <img class="sec-icon" src="assets/undangya/rimba-jungle/icon-clock.webp" alt="" loading="lazy" decoding="async">
-          <div class="sec-kicker">HITUNG MUNDUR</div>
-          <h2 class="sec-title serif">Menuju Hari Bahagia</h2>
-        </div>
+        <div class="sec-head rv rv-swing"><div class="signpost sp-4"><div class="sign"><i class="rope rl"></i><i class="rope rr"></i><i class="nail n1"></i><i class="nail n2"></i><i class="nail n3"></i><i class="nail n4"></i><img class="sign-ico" src="assets/undangya/rimba-jungle/icon-clock.webp" alt="" loading="lazy" decoding="async"><div><span class="sec-kicker">HITUNG MUNDUR</span></div><h2 class="sec-title serif">Menuju Hari Bahagia</h2>
+        </div></div></div>
         <div class="countdown rv rv-flip" id="countdown" data-target="2027-06-12T08:00:00+07:00" aria-label="Hitung mundur menuju akad nikah">
-          <div class="cd-box"><b id="cdD">0</b><span>Hari</span></div>
-          <div class="cd-box"><b id="cdH">0</b><span>Jam</span></div>
-          <div class="cd-box"><b id="cdM">0</b><span>Menit</span></div>
-          <div class="cd-box"><b id="cdS">0</b><span>Detik</span></div>
+          <div class="cd-stone"><div class="cd-rock"></div><i class="cd-moss" style="left:6%;top:4%;width:26px;height:16px"></i><i class="cd-moss" style="right:4%;bottom:8%;width:20px;height:13px"></i><i class="cd-rope"></i><b id="cdD">0</b><span>Hari</span></div>
+          <div class="cd-stone"><div class="cd-rock"></div><i class="cd-moss" style="left:6%;top:4%;width:26px;height:16px"></i><i class="cd-moss" style="right:4%;bottom:8%;width:20px;height:13px"></i><i class="cd-rope"></i><b id="cdH">0</b><span>Jam</span></div>
+          <div class="cd-stone"><div class="cd-rock"></div><i class="cd-moss" style="left:6%;top:4%;width:26px;height:16px"></i><i class="cd-moss" style="right:4%;bottom:8%;width:20px;height:13px"></i><i class="cd-rope"></i><b id="cdM">0</b><span>Menit</span></div>
+          <div class="cd-stone"><div class="cd-rock"></div><i class="cd-moss" style="left:6%;top:4%;width:26px;height:16px"></i><i class="cd-moss" style="right:4%;bottom:8%;width:20px;height:13px"></i><i class="cd-rope"></i><b id="cdS">0</b><span>Detik</span></div>
         </div>
         <p class="demo-note rv rv-up" style="margin-bottom:26px">Sabtu, 12 Juni 2027 — Jakarta</p>
 
@@ -579,38 +717,25 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
 
     <!-- ================= GALERI ================= -->
     <section id="galeri">
+      <div class="sec-orn" aria-hidden="true"><img class="orn orn-bob" style="left:0;top:88px;width:52px" src="assets/undangya/rimba-jungle/stempel.webp" alt="" loading="lazy"><img class="orn orn-terbang" style="right:0;top:120px;width:64px" src="assets/undangya/rimba-jungle/kakatua.webp" alt="" loading="lazy"></div>
       <div class="bg-tint">
-      <div class="sec-head rv rv-up">
-        <img class="sec-icon" src="assets/undangya/rimba-jungle/icon-key.webp" alt="" loading="lazy" decoding="async">
-        <div class="sec-kicker">GALERI</div>
-        <h2 class="sec-title serif">Potret di Jantung Rimba</h2>
+      <div class="sec-head rv rv-swing"><div class="signpost sp-1"><div class="sign"><i class="rope rl"></i><i class="rope rr"></i><i class="nail n1"></i><i class="nail n2"></i><i class="nail n3"></i><i class="nail n4"></i><img class="sign-ico" src="assets/undangya/rimba-jungle/icon-key.webp" alt="" loading="lazy" decoding="async"><div><span class="sec-kicker">GALERI</span></div><h2 class="sec-title serif">Potret di Jantung Rimba</h2>
         <p class="sec-sub">Geser rel potret rimba kami — ketuk untuk memperbesar</p>
-      </div>
-      <div class="gal-rail" id="galGrid">
-        <figure class="rv rv-arch"><div class="arch"><img src="assets/undangya/rimba-jungle/galeri-1.webp" alt="Pasangan di depan air terjun rimba" loading="lazy" decoding="async"></div><figcaption class="gal-cap">Air Terjun Rimba</figcaption></figure>
-        <figure class="rv rv-arch"><div class="arch"><img src="assets/undangya/rimba-jungle/galeri-2.webp" alt="Pasangan menyeberangi jembatan tali di atas sungai" loading="lazy" decoding="async"></div><figcaption class="gal-cap">Jembatan Tali</figcaption></figure>
-        <figure class="rv rv-arch"><div class="arch"><img src="assets/undangya/rimba-jungle/galeri-3.webp" alt="Pasangan di tepi sungai jernih rimba" loading="lazy" decoding="async"></div><figcaption class="gal-cap">Sungai Jernih</figcaption></figure>
-        <figure class="rv rv-arch"><div class="arch"><img src="assets/undangya/rimba-jungle/galeri-4.webp" alt="Pasangan di rumah pohon di kanopi hutan" loading="lazy" decoding="async"></div><figcaption class="gal-cap">Rumah Pohon</figcaption></figure>
-        <figure class="rv rv-arch"><div class="arch"><img src="assets/undangya/rimba-jungle/galeri-5.webp" alt="Pasangan berjalan di jalur pakis" loading="lazy" decoding="async"></div><figcaption class="gal-cap">Jalur Pakis</figcaption></figure>
-        <figure class="rv rv-arch"><div class="arch"><img src="assets/undangya/rimba-jungle/galeri-6.webp" alt="Pasangan di bawah daun monstera raksasa" loading="lazy" decoding="async"></div><figcaption class="gal-cap">Di Bawah Monstera</figcaption></figure>
-        <figure class="rv rv-arch"><div class="arch"><img src="assets/undangya/rimba-jungle/galeri-7.webp" alt="Pasangan bersama burung eksotis rimba" loading="lazy" decoding="async"></div><figcaption class="gal-cap">Sahabat Burung Rimba</figcaption></figure>
-        <figure class="rv rv-arch"><div class="arch"><img src="assets/undangya/rimba-jungle/galeri-8.webp" alt="Pasangan di hutan rimba berlentera saat senja" loading="lazy" decoding="async"></div><figcaption class="gal-cap">Lentera Senja Rimba</figcaption></figure>
-      <div class="gal-dots" id="galDots" aria-hidden="true"></div></div>
+      </div></div></div>
+      <div class="jrail" id="galGrid"><figure class="jcard rv rv-flip" style="--tilt:-1.4deg"><span class="jpin" aria-hidden="true"></span><div class="jphoto"><img src="assets/undangya/rimba-jungle/galeri-1.webp" alt="Pasangan di depan air terjun rimba" loading="lazy" decoding="async"></div><figcaption><div class="jnote">Air terjun pertama yang kami temukan…</div><div class="jmeta">Catatan lapangan · 06.15 WIB</div></figcaption></figure><figure class="jcard rv rv-drop" style="--tilt:1.2deg"><span class="jpin" aria-hidden="true"></span><div class="jphoto"><img src="assets/undangya/rimba-jungle/galeri-2.webp" alt="Pasangan menyeberangi jembatan tali di atas sungai" loading="lazy" decoding="async"></div><figcaption><div class="jnote">Jembatan tali — pegangan erat, jangan menoleh!</div><div class="jmeta">Catatan lapangan · Pos 2</div></figcaption></figure><figure class="pano rv rv-zoom"><img src="assets/undangya/rimba-jungle/panorama-lembah.webp" alt="Panorama lembah rimba berkabut dengan air terjun dan jembatan tali" loading="lazy" decoding="async"><figcaption><div class="jnote">Lembah berkabut dari bibir jurang — rimba seluas mata memandang.</div><div class="jmeta">Panorama · Lembah Rimba</div></figcaption></figure><figure class="jcard rv rv-pop" style="--tilt:-1deg"><span class="jpin" aria-hidden="true"></span><div class="jphoto"><img src="assets/undangya/rimba-jungle/galeri-3.webp" alt="Pasangan di tepi sungai jernih rimba" loading="lazy" decoding="async"></div><figcaption><div class="jnote">Sungai jernih, kaki akhirnya beristirahat.</div><div class="jmeta">Catatan lapangan · 09.40 WIB</div></figcaption></figure><figure class="jcard rv rv-flip" style="--tilt:1.5deg"><span class="jpin" aria-hidden="true"></span><div class="jphoto"><img src="assets/undangya/rimba-jungle/galeri-4.webp" alt="Pasangan di rumah pohon di kanopi hutan" loading="lazy" decoding="async"></div><figcaption><div class="jnote">Rumah pohon di kanopi — semalam di atas awan daun.</div><div class="jmeta">Catatan lapangan · Pos 3</div></figcaption></figure><figure class="jcard rv rv-drop" style="--tilt:-1.6deg"><span class="jpin" aria-hidden="true"></span><div class="jphoto"><img src="assets/undangya/rimba-jungle/galeri-5.webp" alt="Pasangan berjalan di jalur pakis" loading="lazy" decoding="async"></div><figcaption><div class="jnote">Jalur pakis setinggi pinggang, wangi tanah basah.</div><div class="jmeta">Catatan lapangan · 11.05 WIB</div></figcaption></figure><figure class="pano rv rv-zoom"><img src="assets/undangya/rimba-jungle/galeri-8.webp" alt="Pasangan di hutan rimba berlentera saat senja" loading="lazy" decoding="async"><figcaption><div class="jnote">Lentera senja rimba — cahaya kecil penuntun pulang.</div><div class="jmeta">Panorama · Senja di Rimba</div></figcaption></figure><figure class="jcard rv rv-pop" style="--tilt:1.1deg"><span class="jpin" aria-hidden="true"></span><div class="jphoto"><img src="assets/undangya/rimba-jungle/galeri-6.webp" alt="Pasangan di bawah daun monstera raksasa" loading="lazy" decoding="async"></div><figcaption><div class="jnote">Di bawah monstera raksasa, hujan pun sungkan masuk.</div><div class="jmeta">Catatan lapangan · 13.20 WIB</div></figcaption></figure><figure class="jcard rv rv-flip" style="--tilt:-1.2deg"><span class="jpin" aria-hidden="true"></span><div class="jphoto"><img src="assets/undangya/rimba-jungle/galeri-7.webp" alt="Pasangan bersama burung eksotis rimba" loading="lazy" decoding="async"></div><figcaption><div class="jnote">Sahabat burung rimba ikut berpose — sekali seumur ekspedisi!</div><div class="jmeta">Catatan lapangan · 15.45 WIB</div></figcaption></figure></div><div class="gal-dots" id="galDots" aria-hidden="true"></div><div class="jhint">← JURNAL LAPANGAN · GESER →</div>
       </div>
     </section>
 
 <!-- ================= CUPLIKAN ================= -->
     <section id="cuplikan">
+      <div class="sec-orn" aria-hidden="true"><img class="orn orn-tegak" style="left:-4px;bottom:24px;width:64px" src="assets/undangya/rimba-jungle/pondok.webp" alt="" loading="lazy"><img class="orn orn-bob" style="right:-6px;top:100px;width:76px;animation-delay:-3s" src="assets/undangya/rimba-jungle/jembatan-bambu.webp" alt="" loading="lazy"></div>
       <div class="bg-tint">
-        <div class="sec-head rv rv-up">
-          <img class="sec-icon" src="assets/undangya/rimba-jungle/icon-leaf.webp" alt="" loading="lazy" decoding="async">
-          <div class="sec-kicker">CUPLIKAN</div>
-          <h2 class="sec-title serif">Cuplikan Jantung Rimba</h2>
+        <div class="sec-head rv rv-swing"><div class="signpost sp-2"><div class="sign"><i class="rope rl"></i><i class="rope rr"></i><i class="nail n1"></i><i class="nail n2"></i><i class="nail n3"></i><i class="nail n4"></i><img class="sign-ico" src="assets/undangya/rimba-jungle/icon-leaf.webp" alt="" loading="lazy" decoding="async"><div><span class="sec-kicker">CUPLIKAN</span></div><h2 class="sec-title serif">Cuplikan Jantung Rimba</h2>
           <p class="sec-sub">Sepotong perjalanan kami dalam bingkai bergerak</p>
-        </div>
-        <div class="rv rv-zoom" style="border:3px solid var(--gold);border-radius:170px 170px 18px 18px;padding:6px;background:linear-gradient(160deg,#fff8e6,#f3e3bb);box-shadow:0 16px 36px rgba(90,64,140,.22)">
+        </div></div></div>
+        <div class="rv rv-zoom" style="border:3px solid #6d4a26;border-radius:16px;padding:6px;background:linear-gradient(160deg,#8a6538,#4c3016);box-shadow:0 16px 34px rgba(0,0,0,.5)">
           <div class="vid-wrap" id="vidWrap">
-            <div class="vid-stage" style="border-radius:162px 162px 12px 12px">
+            <div class="vid-stage" style="border-radius:11px">
               <video id="teaserVideo" src="assets/undangya/rimba-jungle/teaser.mp4" poster="assets/undangya/rimba-jungle/teaser-poster.webp" preload="none" playsinline controls aria-label="Video teaser Meyzsa dan Fahrezzi"></video>
               <button class="vid-btn" id="vidBtn" type="button" aria-label="Putar atau jeda video teaser">▶</button>
             </div>
@@ -622,13 +747,11 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
 
     <!-- ================= LIVE STREAMING + TAGAR ================= -->
     <section id="live">
+      <div class="sec-orn" aria-hidden="true"><img class="orn orn-tegak" style="left:-8px;top:38%;width:50px" src="assets/undangya/rimba-jungle/bambu.webp" alt="" loading="lazy"><img class="orn orn-tegak" style="right:-6px;bottom:26px;width:52px;animation-delay:-5s" src="assets/undangya/rimba-jungle/flamboyan.webp" alt="" loading="lazy"></div>
       <div class="bg-tint">
-        <div class="sec-head rv rv-up">
-          <img class="sec-icon" src="assets/undangya/rimba-jungle/icon-lantern.webp" alt="" loading="lazy" decoding="async">
-          <div class="sec-kicker">LIVE STREAMING</div>
-          <h2 class="sec-title serif">Siaran Langsung</h2>
+        <div class="sec-head rv rv-swing"><div class="signpost sp-3"><div class="sign"><i class="rope rl"></i><i class="rope rr"></i><i class="nail n1"></i><i class="nail n2"></i><i class="nail n3"></i><i class="nail n4"></i><img class="sign-ico" src="assets/undangya/rimba-jungle/icon-lantern.webp" alt="" loading="lazy" decoding="async"><div><span class="sec-kicker">LIVE STREAMING</span></div><h2 class="sec-title serif">Siaran Langsung</h2>
           <p class="sec-sub">Untuk keluarga &amp; sahabat yang berhalangan hadir langsung</p>
-        </div>
+        </div></div></div>
         <div class="card rv rv-zoom" style="text-align:center">
           <span class="live-badge"><span class="live-dot" aria-hidden="true"></span>LIVE · CONTOH</span>
           <h3 class="sub-h">Resepsi Pernikahan</h3>
@@ -655,13 +778,11 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
 
         <!-- ================= RSVP ================= -->
     <section id="rsvp">
+      <div class="sec-orn" aria-hidden="true"><img class="orn orn-tegak" style="left:-6px;bottom:30px;width:48px" src="assets/undangya/rimba-jungle/anggrek.webp" alt="" loading="lazy"><img class="orn orn-tegak" style="right:-8px;top:34%;width:56px;animation-delay:-4s" src="assets/undangya/rimba-jungle/pakis.webp" alt="" loading="lazy"></div>
       <div class="bg-tint">
-        <div class="sec-head rv rv-up">
-          <img class="sec-icon" src="assets/undangya/rimba-jungle/icon-rings.webp" alt="" loading="lazy" decoding="async">
-          <div class="sec-kicker">RSVP &amp; UCAPAN</div>
-          <h2 class="sec-title serif">Buku Tamu Rimba</h2>
+        <div class="sec-head rv rv-swing"><div class="signpost sp-4"><div class="sign"><i class="rope rl"></i><i class="rope rr"></i><i class="nail n1"></i><i class="nail n2"></i><i class="nail n3"></i><i class="nail n4"></i><img class="sign-ico" src="assets/undangya/rimba-jungle/icon-rings.webp" alt="" loading="lazy" decoding="async"><div><span class="sec-kicker">RSVP &amp; UCAPAN</span></div><h2 class="sec-title serif">Buku Tamu Rimba</h2>
           <p class="sec-sub">Konfirmasi kehadiran &amp; tuliskan doa terbaik Anda</p>
-        </div>
+        </div></div></div>
         <div class="card rv rv-zoom">
           <form id="rsvpForm" novalidate>
             <div class="field"><label for="rsvpName">Nama Tamu</label><input id="rsvpName" type="text" placeholder="Nama Anda" autocomplete="name"></div>
@@ -678,13 +799,11 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
 
 <!-- ================= BUKU TAMU & CHECK-IN QR ================= -->
     <section id="bukutamu">
+      <div class="sec-orn" aria-hidden="true"><img class="orn orn-gantung" style="left:0;top:70px;width:52px" src="assets/undangya/rimba-jungle/bougenville.webp" alt="" loading="lazy"><img class="orn orn-gantung" style="right:2px;bottom:40px;width:34px;animation-delay:-3s" src="assets/undangya/rimba-jungle/lentera.webp" alt="" loading="lazy"></div>
       <div class="bg-tint">
-        <div class="sec-head rv rv-up">
-          <img class="sec-icon" src="assets/undangya/rimba-jungle/icon-scroll.webp" alt="" loading="lazy" decoding="async">
-          <div class="sec-kicker">BUKU TAMU &amp; CHECK-IN</div>
-          <h2 class="sec-title serif">Presensi Digital</h2>
+        <div class="sec-head rv rv-swing"><div class="signpost sp-1"><div class="sign"><i class="rope rl"></i><i class="rope rr"></i><i class="nail n1"></i><i class="nail n2"></i><i class="nail n3"></i><i class="nail n4"></i><img class="sign-ico" src="assets/undangya/rimba-jungle/icon-scroll.webp" alt="" loading="lazy" decoding="async"><div><span class="sec-kicker">BUKU TAMU &amp; CHECK-IN</span></div><h2 class="sec-title serif">Presensi Digital</h2>
           <p class="sec-sub">Pindai kode QR ini atau isi buku tamu saat tiba di lokasi</p>
-        </div>
+        </div></div></div>
         <div class="card rv rv-zoom" style="text-align:center">
           <div class="qr-box"><img src="assets/undangya/rimba-jungle/qr-undangan.webp" alt="Kode QR menuju halaman undangan ini" loading="lazy" decoding="async"></div>
           <p style="font-size:12.5px;line-height:1.65">Kode QR membuka halaman undangan yang sedang Anda baca — tunjukkan kepada penerima tamu saat check-in.</p>
@@ -702,13 +821,11 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
 
         <!-- ================= AMPLOP ================= -->
     <section id="amplop">
+      <div class="sec-orn" aria-hidden="true"><img class="orn orn-tegak" style="left:-6px;top:36%;width:50px" src="assets/undangya/rimba-jungle/pisang.webp" alt="" loading="lazy"><img class="orn orn-tegak" style="right:-6px;bottom:28px;width:52px;animation-delay:-5s" src="assets/undangya/rimba-jungle/palem.webp" alt="" loading="lazy"></div>
       <div class="bg-tint">
-      <div class="sec-head rv rv-up head-glass">
-        <img class="sec-icon" src="assets/undangya/rimba-jungle/icon-leaf.webp" alt="" loading="lazy" decoding="async">
-        <div class="sec-kicker">AMPLOP DIGITAL</div>
-        <h2 class="sec-title serif">Tanda Kasih</h2>
+      <div class="sec-head rv rv-swing"><div class="signpost sp-2"><div class="sign"><i class="rope rl"></i><i class="rope rr"></i><i class="nail n1"></i><i class="nail n2"></i><i class="nail n3"></i><i class="nail n4"></i><img class="sign-ico" src="assets/undangya/rimba-jungle/icon-leaf.webp" alt="" loading="lazy" decoding="async"><div><span class="sec-kicker">AMPLOP DIGITAL</span></div><h2 class="sec-title serif">Tanda Kasih</h2>
         <p class="sec-sub">Doa restu Anda adalah hadiah terindah. Bagi yang berkenan memberi tanda kasih:</p>
-      </div>
+      </div></div></div>
       <div class="card acc-card rv rv-left">
         <div class="bank">BCA</div>
         <div class="acc-num" id="accBca">1234567890</div>
@@ -732,13 +849,11 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
 
 <!-- ================= TURUT MENGUNDANG ================= -->
     <section id="turut">
+      <div class="sec-orn" aria-hidden="true"><img class="orn orn-tegak" style="left:-6px;bottom:26px;width:54px" src="assets/undangya/rimba-jungle/bunga-hutan.webp" alt="" loading="lazy"><img class="orn orn-tegak" style="right:-6px;top:32%;width:50px;animation-delay:-4s" src="assets/undangya/rimba-jungle/daun-monstera.webp" alt="" loading="lazy"></div>
       <div class="bg-tint">
-        <div class="sec-head rv rv-up">
-          <img class="sec-icon" src="assets/undangya/rimba-jungle/crest.webp" alt="" loading="lazy" decoding="async">
-          <div class="sec-kicker">TURUT MENGUNDANG</div>
-          <h2 class="sec-title serif">Turut Mengundang</h2>
+        <div class="sec-head rv rv-swing"><div class="signpost sp-3"><div class="sign"><i class="rope rl"></i><i class="rope rr"></i><i class="nail n1"></i><i class="nail n2"></i><i class="nail n3"></i><i class="nail n4"></i><img class="sign-ico" src="assets/undangya/rimba-jungle/crest.webp" alt="" loading="lazy" decoding="async"><div><span class="sec-kicker">TURUT MENGUNDANG</span></div><h2 class="sec-title serif">Turut Mengundang</h2>
           <p class="sec-sub">Segenap keluarga besar kedua mempelai</p>
-        </div>
+        </div></div></div>
         <div class="turut-grid">
           <div class="card turut-card rv rv-left">
             <h4>Keluarga Mempelai Wanita</h4>
@@ -755,7 +870,8 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
 
         <!-- ================= PENUTUP ================= -->
     <section id="penutup" style="text-align:center">
-      <img class="lyr wind-fl" data-wind="soft" data-anchor="top" style="position:absolute;top:6px;left:0;width:100%;opacity:.55;z-index:1" src="assets/undangya/rimba-jungle/bougenville.webp" alt="" loading="lazy" decoding="async">
+      <div class="sec-orn" aria-hidden="true"><img class="orn orn-tegak" style="left:0;bottom:14px;width:40px" src="assets/undangya/rimba-jungle/teratai.webp" alt="" loading="lazy"><img class="orn orn-tegak" style="right:0;bottom:14px;width:40px;animation-delay:-4s" src="assets/undangya/rimba-jungle/teratai.webp" alt="" loading="lazy"></div>
+      <img class="penutup-hang" src="assets/undangya/rimba-jungle/bougenville.webp" alt="" loading="lazy" decoding="async">
       <div class="sec-petals" aria-hidden="true"></div>
       <div class="bg-tint panel-glass" style="padding:30px 22px 26px">
         <img class="sec-icon rv rv-up" src="assets/undangya/rimba-jungle/crest.webp" alt="" style="width:74px;height:74px">
@@ -818,122 +934,7 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
     }
   }
 
-  /* ================= SISTEM ANGIN (versi SMOOTH) =================
-     - Ayunan bunga: WAAPI pada properti rotate/translate (terpisah dari animasi
-       transform masuk, jadi menumpuk rapi). Kurva SINUS 9 titik yang rapat dengan
-       easing seimbang di tiap segmen — gerak mengalir tanpa patah/menyentak,
-       seperti kain tertiup angin sepoi. Amplitudo kecil & elegan (bunga ±1,5–3deg,
-       elemen besar ±1–2deg), siklus panjang 6–10 dtk, fasa beda per elemen.
-       Pangkal atas (gantungan): menekuk ke kanan = rotate NEGATIF.
-       Pangkal bawah (rumpun):  menekuk ke kanan = rotate POSITIF.
-     - Gust: hembusan koheren kiri→kanan tiap ±14–20 dtk selama 9 dtk, naik-turun
-       SMOOTHSTEP (attack ±4 dtk, release ±5 dtk), tekuk maks ±3–4deg; ditambahkan
-       (composite:'add') di atas ayunan dasar.
-     - Kelopak: sprite leaf.webp melayang pelan & anggun (jatuh bergoyang);
-       saat gust sedikit lebih cepat, tidak melesat. Hanya transform/opacity.
-     Semua mati total bila prefers-reduced-motion. */
-  var windOK=!reduced && typeof document.body.animate==="function";
-  var GUST_MS=9000, gustStart=-1e9;
-  function gustLevelAt(now){
-    var t=(now-gustStart)/GUST_MS;
-    if(t<0||t>=1)return 0;
-    var sm=function(x){x=Math.min(1,Math.max(0,x));return x*x*(3-2*x);};
-    return t<.45 ? sm(t/.45) : 1-sm((t-.45)/.55);
-  }
-  var WIND_OFF=[0,.125,.25,.375,.5,.625,.75,.875,1];
-  var WIND_EZ="cubic-bezier(.37,.02,.63,.98)";
-  var SWAY9=[0,.71,1,.71,0,-.71,-1,-.71,0]; /* satu gelombang sinus penuh, 9 titik */
-  function windFrames(prop,vals){
-    return vals.map(function(v,i){
-      var f={}; f[prop]=v; f.offset=WIND_OFF[i];
-      if(i<vals.length-1)f.easing=WIND_EZ;
-      return f;
-    });
-  }
-  function swayVals(amp,tx,ty){
-    var rot=SWAY9.map(function(f){return (f*amp).toFixed(2)+"deg";});
-    var tr=SWAY9.map(function(f){return (f*tx).toFixed(1)+"px "+(Math.abs(f)*ty).toFixed(1)+"px";});
-    return [rot,tr];
-  }
-  function swayWind(el,rot,tr,dur,delay){
-    if(!windOK||!el)return;
-    try{
-      el.animate(windFrames("rotate",rot),{duration:dur,delay:delay||0,iterations:Infinity});
-      /* tr=null => elemen BERANCHOR (tegak/gantung): TANPA animasi translate sama
-         sekali, supaya titik diamnya (akar di bawah / titik gantung di atas) tidak
-         ikut bergeser — gerak murni rotasi mengelilingi transform-origin pangkal. */
-      if(tr)el.animate(windFrames("translate",tr),{duration:dur,delay:delay||0,iterations:Infinity});
-    }catch(e){}
-  }
-  /* bunga individual ATAS sampul (.flwt): tiap bunga sway SENDIRI dari pangkal
-     gantungnya di atas. Amplitudo (data-amp), durasi (data-dur, 7,6–9,8 dtk) dan fasa
-     berbeda per bunga mengikuti gelombang sinus yang sama; arah pangkal atas =
-     NEGATIF (menekuk ke kanan). */
-  document.querySelectorAll(".flwt").forEach(function(el,i){
-    var amp=(parseFloat(el.getAttribute("data-amp"))||2.1)*1.35;
-    var dur=(parseInt(el.getAttribute("data-dur"),10)||8600)*0.88;
-    var ph=Math.round(Math.sin(i*53.3+11)*2600); /* fasa deterministik, beda tiap bunga */
-    var v=swayVals(-amp,0,0);
-    swayWind(el,v[0],null,dur,ph); /* GANTUNG: rotasi saja dari titik gantung atas; titik gantung diam */
-  });
-  /* bunga individual bawah sampul (.flw): tiap bunga sway SENDIRI dari pangkal bawahnya.
-     Amplitudo (data-amp, ±1,6–3deg), durasi (data-dur, 7,2–9,8 dtk) dan fasa berbeda per bunga,
-     mengikuti gelombang sinus yang sama; arah pangkal bawah = positif (menekuk ke kanan). */
-  document.querySelectorAll(".flw").forEach(function(el,i){
-    var amp=(parseFloat(el.getAttribute("data-amp"))||2.2)*1.35;
-    var dur=(parseInt(el.getAttribute("data-dur"),10)||8400)*0.88;
-    var ph=Math.round(Math.sin(i*39.7)*2600); /* fasa deterministik, beda tiap bunga */
-    var v=swayVals(amp,0,0);
-    swayWind(el,v[0],null,dur,ph); /* TEGAK: rotasi saja dari pangkal bawah; akar tertanam diam, ujung melambai */
-  });
-  /* elemen "soft" (strip hias Penutup; di Joglo juga pohon beringin/pisang &
-     janur): SEKARANG tiap elemen sway dari ANCHOR-nya sendiri — data-anchor=
-     "top" (gantung, tanda negatif) atau "bottom" (tegak: pohon/janur, tanda
-     positif) — amplitudo & durasi dari data-amp/data-dur elemen itu sendiri
-     (default ±1,2deg / 9,8 dtk). Rotasi saja, tanpa translate: pangkal diam. */
-  document.querySelectorAll('[data-wind="soft"]').forEach(function(el,i){
-    var anch=el.getAttribute("data-anchor")||"top";
-    var amp=parseFloat(el.getAttribute("data-amp")); if(isNaN(amp))amp=1.2; amp*=1.35;
-    var dur=(parseInt(el.getAttribute("data-dur"),10)||9800)*0.88;
-    var ph=Math.round(Math.sin(i*47.7+7)*2600);
-    var v=swayVals(anch==="bottom"?amp:-amp,0,0);
-    swayWind(el,v[0],null,dur,ph);
-  });
-
-  function doGust(){
-    if(!windOK)return;
-    gustStart=performance.now();
-    document.querySelectorAll("[data-wind]").forEach(function(el){
-      var kind=el.getAttribute("data-wind");
-      var anch=el.getAttribute("data-anchor")||((kind==="flw"||kind==="bottom")?"bottom":"top");
-      var sign=(anch==="bottom")?1:-1; /* satu arah angin: kiri → kanan, menekuk dari anchor masing-masing */
-      var bend=(parseFloat(el.getAttribute("data-bend"))||3.5)*1.3;
-      var EZ="cubic-bezier(.45,.05,.55,.95)";
-      try{
-        /* GUST TANPA TRANSLATE: elemen menekuk (rotasi aditif dari anchor-nya)
-           lalu kembali — pangkal/akar/titik gantung TIDAK bergeser sama sekali. */
-        el.animate([
-          {rotate:"0deg",offset:0,easing:EZ},
-          {rotate:(sign*bend*.45)+"deg",offset:.28,easing:EZ},
-          {rotate:(sign*bend*.8)+"deg",offset:.42,easing:EZ},
-          {rotate:(sign*bend)+"deg",offset:.5,easing:EZ},
-          {rotate:(sign*bend*.72)+"deg",offset:.66,easing:EZ},
-          {rotate:(sign*bend*.34)+"deg",offset:.84,easing:EZ},
-          {rotate:"0deg",offset:1}
-        ],{duration:GUST_MS,composite:"add"});
-      }catch(e){/* composite add tak didukung: ayunan dasar tetap berjalan */}
-    });
-  }
-  function scheduleGust(first){
-    if(!windOK)return;
-    setTimeout(function(){
-      if(!document.hidden)doGust();
-      scheduleGust(false);
-    }, first?8000:(14000+Math.random()*6000));
-  }
-  if(windOK)scheduleGust(true);
-  window.__triggerGust=doGust; /* kait uji render */
-  window.__windState=function(){return {wind:windOK,gustLevel:+gustLevelAt(performance.now()).toFixed(2),petals:document.querySelectorAll(".petal").length};};
+  /* BESPOKE RIMBA: angin kini 100% animasi CSS (kelas .sway-b/.sway-t/.orn-*) — sistem WAAPI lama DIHAPUS; nol JS per-frame. */
 
   /* --- kelopak melayang CSS (kompositor murni, TANPA rAF) ---
      Diagnosis smooth-banding 2026-11-12: loop rAF lama menulis
@@ -1001,22 +1002,6 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
     io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});},{threshold:.14});
     items.forEach(function(e){io.observe(e);});
   }
-  var plxEls=[];
-  function collectPlx(){plxEls=Array.prototype.slice.call(document.querySelectorAll("[data-plx]"));}
-  collectPlx();
-  var ticking=false;
-  window.addEventListener("scroll",function(){
-    if(reduced||ticking)return; ticking=true;
-    requestAnimationFrame(function(){
-      var vh=window.innerHeight;
-      plxEls.forEach(function(el){
-        var r=el.getBoundingClientRect(); if(r.bottom<-80||r.top>vh+80)return;
-        var sp=parseFloat(el.getAttribute("data-plx"))||8, off=((r.top+r.height/2)-vh/2)/vh*sp;
-        el.style.translate="0 "+off.toFixed(1)+"px";
-      });
-      ticking=false;
-    });
-  },{passive:true});
 
   /* --- galeri lightbox --- */
   var lb=document.getElementById("lightbox"), lbImg=document.getElementById("lbImg");
@@ -1154,30 +1139,6 @@ p.demo-note.rv{background:rgba(5,22,12,.68);border-radius:10px;padding:8px 10px}
   });
 })();
 </script>
-<script>
-(function(){
-  /* Paralaks SATU dunia: tumpukan band background bergerak lambat mengikuti progres
-     scroll <main> (langit+kastil -> taman -> gerbang malam). Transform-only + rAF
-     throttle (standar smooth); nonaktif bila prefers-reduced-motion. */
-  var stack=document.getElementById("worldStack"), main=document.getElementById("content");
-  if(!stack||!main)return;
-  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
-  var ticking=false;
-  function move(){
-    ticking=false;
-    var vh=window.innerHeight||0, r=main.getBoundingClientRect();
-    var total=r.height-vh; if(total<=0)return;
-    var p=-r.top/total; p=p<0?0:(p>1?1:p);
-    var over=stack.offsetHeight-vh; if(over<0)over=0;
-    stack.style.transform="translate3d(0,"+(-p*over).toFixed(1)+"px,0)";
-  }
-  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(move);}}
-  window.addEventListener("scroll",onScroll,{passive:true});
-  window.addEventListener("resize",onScroll);
-  window.addEventListener("load",move);
-  move();
-})();
-</script>
-<script>(function(){var rail=document.getElementById("galGrid"),dots=document.getElementById("galDots");if(!rail||!dots)return;var n=rail.children.length;for(var i=0;i<n;i++){var d=document.createElement("i");if(i===0)d.className="on";dots.appendChild(d);}var tick=false;rail.addEventListener("scroll",function(){if(tick)return;tick=true;requestAnimationFrame(function(){var idx=Math.round(rail.scrollLeft/(rail.clientWidth*.68));idx=Math.max(0,Math.min(n-1,idx));for(var j=0;j<dots.children.length;j++)dots.children[j].className=j===idx?"on":"";tick=false;});},{passive:true});})();</script>
+<script>(function(){var rail=document.getElementById("galGrid"),dots=document.getElementById("galDots");if(!rail||!dots)return;var n=rail.children.length;for(var i=0;i<n;i++){var d=document.createElement("i");if(i===0)d.className="on";dots.appendChild(d);}var tick=false;rail.addEventListener("scroll",function(){if(tick)return;tick=true;requestAnimationFrame(function(){var mx=rail.scrollWidth-rail.clientWidth;var idx=mx>0?Math.round(rail.scrollLeft/mx*(n-1)):0;idx=Math.max(0,Math.min(n-1,idx));for(var j=0;j<dots.children.length;j++)dots.children[j].className=j===idx?"on":"";tick=false;});},{passive:true});})();</script>
 </body>
 </html>
